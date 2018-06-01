@@ -453,19 +453,19 @@ import UIKit
 //array += [a]
 //print(array)
 
-var arrayNumber = [Int](10...15)
-func down() -> [Int] {
-    for i in 0...(arrayNumber.count - 2) {
-        for j in (i + 1)...(arrayNumber.count - 1) {
-            if arrayNumber[i] < arrayNumber[j] {
-                let temp = arrayNumber[j]
-                arrayNumber[j] = arrayNumber[i]
-                arrayNumber[i] = temp
-            }
-        }
-    }
-    return down()
-}
+//var arrayNumber = [Int](10...15)
+//func down() -> [Int] {
+//    for i in 0...(arrayNumber.count - 2) {
+//        for j in (i + 1)...(arrayNumber.count - 1) {
+//            if arrayNumber[i] < arrayNumber[j] {
+//                let temp = arrayNumber[j]
+//                arrayNumber[j] = arrayNumber[i]
+//                arrayNumber[i] = temp
+//            }
+//        }
+//    }
+//    return down()
+//}
 
 //class NameShape {
 //    var numberOfside: Int = 0
@@ -744,4 +744,42 @@ func down() -> [Int] {
 //}
 //hinhChuNhatRong(chieuDai: 5, chieuRong: 9)
 
+//func simpleQueues() {
+//    let queue = DispatchQueue(label: "com.bigZero.GCDSample")
+//    queue.async {
+//        for i in 0..<5 {
+//            print("🔵 \(i) -\(Thread.current))")
+//        }
+//    }
+//
+//    queue.async {
+//        for i in 0..<5 {
+//            print("⚾️ \(i) -\(Thread.current))")
+//        }
+//    }
+//
+//    for i in 0..<10 {
+//        print("❤️ \(i) - \(Thread.current)")
+//    }
+//}
+//print(simpleQueues())
 
+func simpleQueues() {
+    let serialQueue = DispatchQueue(label: "com.bigZero.GCDSamples")
+    serialQueue.sync {
+        for i in 0..<5 {
+            print("🔵 \(i) -\( Thread.current))")
+        }
+    }
+    
+    serialQueue.sync {
+        for i in 0..<5 {
+            print("⚾️ \(i) - \(Thread.current))")
+        }
+    }
+    
+    for i in 0..<10 {
+        print("❤️ \(i) - \(Thread.current)")
+    }
+}
+print(simpleQueues())
