@@ -764,22 +764,23 @@ import UIKit
 //}
 //print(simpleQueues())
 
-func simpleQueues() {
-    let serialQueue = DispatchQueue(label: "com.bigZero.GCDSamples")
-    serialQueue.sync {
-        for i in 0..<5 {
-            print("🔵 \(i) -\( Thread.current))")
-        }
-    }
-    
-    serialQueue.sync {
-        for i in 0..<5 {
-            print("⚾️ \(i) - \(Thread.current))")
-        }
-    }
-    
-    for i in 0..<10 {
-        print("❤️ \(i) - \(Thread.current)")
-    }
-}
-print(simpleQueues())
+//func simpleQueues() {
+//    let serialQueue = DispatchQueue(label: "com.bigZero.GCDSamples")
+//    serialQueue.sync {
+//        for i in 0..<5 {
+//            print("🔵 \(i) -\( Thread.current))")
+//        }
+//    }
+//
+//    serialQueue.sync {
+//        for i in 0..<5 {
+//            print("⚾️ \(i) - \(Thread.current))")
+//        }
+//    }
+//
+//    for i in 0..<10 {
+//        print("❤️ \(i) - \(Thread.current)")
+//    }
+//}
+//print(simpleQueues())
+
