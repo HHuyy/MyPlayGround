@@ -836,6 +836,6 @@ enum Suit {
         }
     }
 }
-let hearts = Suit.hearts
+var hearts = Suit.hearts
 let heartsDescription = hearts.simpleDescription()
-let 
+hearts = .diamonds
